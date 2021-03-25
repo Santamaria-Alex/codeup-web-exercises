@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 Create a file named while.js in the js directory.
 
@@ -42,21 +44,11 @@ alert("Your guess of " + guess + " matches the number " + num + "!");
 */
 
 
+/*
 
 var allCones = Math.floor(Math.random() * 50) + 50;
 var conesPurchased;
 console.log("I have to sell " + allCones + " cones so I can leave!");
-
-/*do {
-    conesPurchased = Math.floor(Math.random() * 5) +1;
-    console.log(conesPurchased + " cone(s) sold.");
-    if (conesPurchased > allCones) {
-        console.log("Cannot sell you " + conesPurchased + " I only have " + allCones + " left.");
-    }
-    allCones = allCones - conesPurchased;
-
-} while (allCones > 0);
-console.log("sold them all.");*/
 
 
 do {
@@ -71,9 +63,7 @@ do {
     if (allCones === 0) {
         console.log("I'm goin' home!");
     }
-
-
-
+*/
 
 
 /*
@@ -92,4 +82,22 @@ if (allCones === 0) {
 */
 
 
+
+// FOR LOOPS
+
+/*var count = 0;
+
+while (count <= 100) {
+    console.log(count);
+    count = count +1;
+}*/
+
+// this is a simplified way to run while loops
+/*for (count = 0; count <= 100; count = count+1) {
+    console.log(count);
+}*/
+
+for (var i = 0; i<=100; i++){
+    console.log(i);
+}
 
