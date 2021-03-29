@@ -97,7 +97,11 @@ while (count <= 100) {
     console.log(count);
 }*/
 
+
+/*
+
 for (var i = 0; i<=100; i++){
     console.log(i);
 }
 
+*/
