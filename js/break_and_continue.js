@@ -30,6 +30,7 @@ for (var i = 1; i <= 50; i++); {
 
 
 // Break and Continue exercise
+/*
 
 var oddNumber = 0;
 
@@ -45,3 +46,4 @@ for (var i = 1; i < 50; i+=2) {
     }
     console.log(i);
 }
+*/
