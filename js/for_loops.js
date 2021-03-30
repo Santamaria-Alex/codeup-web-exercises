@@ -45,6 +45,7 @@ showMultpicationTable(4);*/
 
 // For loops exercise 4:
 
+/*
 for(var i=1; i<=9; i++) {
     var Num = '';
     for (var j = 0; j < i; j++) {
@@ -52,10 +53,13 @@ for(var i=1; i<=9; i++) {
     }
     console.log(Num);
 }
+*/
 
 
 // For loops exercise 5:
 
+/*
 for (var a = 100; a > 0; a = a -5) {
     console.log(a);
 }
+*/
