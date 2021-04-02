@@ -36,8 +36,20 @@ var oddNumber = 0;
 
  while (oddNumber % 2 !== 1 || !(oddNumber > 0 && oddNumber < 50)) {
      oddNumber = parseFloat(prompt("Please enter an odd number between 1 and 50."));
-     if (oddNumber % 2 === 1 && (oddNumber > 0 && oddNumber < 50)){break;}
+     if (oddNumber % 2 === 1 || (oddNumber > 0 && oddNumber < 50)){break;}
  }
+*/
+
+//var oddNumber = parseInt(prompt("Enter odd number between 1 and 50:"));
+
+var oddNumber = 0;
+
+while (true) {
+    oddNumber = parseInt(prompt("Enter odd number between 1 and 50:"));
+    if (oddNumber % 2 !== 0 || (oddNumber > 0 && oddNumber < 50)) {
+        break;
+    }
+}
 
 for (var i = 1; i < 50; i+=2) {
     if (i === oddNumber) {
@@ -46,4 +58,4 @@ for (var i = 1; i < 50; i+=2) {
     }
     console.log(i);
 }
-*/
+
