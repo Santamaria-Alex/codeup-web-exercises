@@ -6,51 +6,52 @@
 </head>
 <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
-        <label for="username">Create Email</label>
-        <input id="username" name="username" type="text" placeholder="Enter Email">
+            <label for="username">Create Email</label>
+            <input id="username" name="username" type="text" placeholder="Enter Email">
+            <br>
+
+            <label for="password">Create Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter Password">
+            <br>
+
+        <hr>
+
+        <label for="bio">Tell me about yourself:</label><br>
+        <textarea name="bio" id="bio" cols="30" rows="10"></textarea> <br>
+        <hr>
+
+        <section>
+            How did you hear about us? <br>
+            <label for="Billboard">
+                <input id="Billboard" type="radio" name="ad-question" value="Billboard">                   Billboard
+            </label> <br>
+            <label for="Radio Ad">
+                <input id="Radio Ad" type="radio" name="ad-question" value="Radio Ad">                   Radio Ad
+            </label> <br>
+            <label for="Internet Ad">
+                <input id="Internet Ad" type="radio" name="ad-question" value="Internet Ad">                   Internet Ad
+            </label> <br>
+            <label for="Other">
+                <input id="Other" type="radio" name="ad-question" value="Other">Other
+            </label> <br>
+
+        </section>
+        <hr>
+
+
+        <section>
+            What is your preferred web browser? <br>
+            <select name="browser_preference" id="browser">
+                <option value="Safari">Safari</option>
+                <option value="Firefox">Firefox</option>
+                <option value="Explorer">Internet Explorer</option>
+            </select>
+        </section>
         <br>
 
-        <label for="password">Create Password</label>
-        <input id="password" name="password" type="password" placeholder="Enter Password">
-        <br>
+        <button type="submit">YEET</button>
+
     </form>
-    <hr>
-
-    <label for="bio">Tell me about yourself:</label><br>
-    <textarea name="bio" id="bio" cols="30" rows="10"></textarea> <br>
-    <hr>
-
-    <section>
-        How did you hear about us? <br>
-        <label for="Billboard">
-            <input id="Billboard" type="radio" name="question" value="Billboard">                   Billboard
-        </label> <br>
-        <label for="Radio Ad">
-            <input id="Radio Ad" type="radio" name="question" value="Radio Ad">                   Radio Ad
-        </label> <br>
-        <label for="Internet Ad">
-            <input id="Internet Ad" type="radio" name="question" value="Internet Ad">                   Internet Ad
-        </label> <br>
-        <label for="Other">
-            <input id="Other" type="radio" name="question" value="Other">Other
-        </label> <br>
-
-    </section>
-    <hr>
-
-
-    <section>
-        What is your preferred web browser? <br>
-        <select name="browser_preference" id="browser">
-            <option value="Safari">Safari</option>
-            <option value="Firefox">Firefox</option>
-            <option value="Explorer">Internet Explorer</option>
-        </select>
-    </section>
-    <br>
-
-    <button type="submit">YEET</button>
-
 
 </body>
 </html>
