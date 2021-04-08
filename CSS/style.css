@@ -1,0 +1,53 @@
+.fancy-header {
+    color: #2f7e1d;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: #2f7e1d;
+    text-decoration: underline;
+}
+
+body {
+    background-color: #f5f0ee;
+    background-image: url(../img/codeup-arrow.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right top;
+    font-family: 'New Rocker', cursive;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+table, th, td {
+    border: 1px solid black;
+    width: 75%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:hover {
+    color: purple;
+}
+
+a:active {
+    color: aqua;
+}
