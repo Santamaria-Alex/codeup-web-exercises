@@ -33,7 +33,8 @@ table, th, td {
     border: 1px solid black;
     width: 75%;
     border-collapse: collapse;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a:link {
