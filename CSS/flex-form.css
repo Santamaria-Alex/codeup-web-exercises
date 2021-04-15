@@ -34,7 +34,6 @@ body {
     border-radius: 5px;
     /* TODO: Add an automatic margin and a flex container to this selector */
     display: flex;
-    flex-direction: column;
     margin: auto;
 }
 
