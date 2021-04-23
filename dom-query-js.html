@@ -24,6 +24,10 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button id="mainTitleChange">Change the Title</button>
+<button id="subTitleChange">Change the Sub-Title</button>
+<button id="listColorChange">Change Color</button>
+<button id="fontChange">Change Font</button>
 
 <script>
     (function() {
@@ -32,26 +36,32 @@
         var mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = 'JavaScript is Cool';
+        var titleChange = function () {
+            mainHeader.innerHTML = 'JavaScript is Cool'
+        };
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        var subTitleChange = function () {
+            subHeader.style.color = "blue";
+        }
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        for (var i = 0; i < listItems.length; i++) {
-            if (listItems[i].getAttribute('data-dbid') === '1') {
-                listItems[i].style.color = 'blue';
-                //continue;
-            }
-            if (i % 2 !== 0) {
-                listItems[i].style.color = "grey";
+        var listColorChange = function () {
+            for (var i = 0; i < listItems.length; i++) {
+                if (listItems[i].getAttribute('data-dbid') === '1') {
+                    listItems[i].style.color = 'blue';
+                    //continue;
+                }
+                if (i % 2 !== 0) {
+                    listItems[i].style.color = "grey";
+                }
             }
         }
 
@@ -59,8 +69,33 @@
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished!";
+        var fontChange = function () {
+            subParagraphs[0].innerHTML = "Mission Accomplished!";
+        }
+
+        document.querySelector("#mainTitleChange").addEventListener('click', titleChange);
+        document.querySelector("#subTitleChange").addEventListener('click', subTitleChange);
+        document.querySelector("#listColorChange").addEventListener('click', listColorChange);
+        document.querySelector("#fontChange").addEventListener('click', fontChange);
+
+
+        // document.getElementById("contentChange").addEventListener("click", function() {
+        //     subParagraphs[0].innerHTML = "Mission Accomplished!";
+        // });
+
+
+
     })();
 </script>
 </body>
 </html>
+
+
+<!--function onoff(){-->
+<!--currentvalue = document.getElementById('onoff').value;-->
+<!--if(currentvalue == "Off"){-->
+<!--document.getElementById("onoff").value="On";-->
+<!--}else{-->
+<!--document.getElementById("onoff").value="Off";-->
+<!--}-->
+<!--}-->
