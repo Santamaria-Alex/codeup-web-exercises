@@ -2,14 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>jQuery Intro</title>
 </head>
 <body>
+    <h1>PanterA</h1>
+    <div id="wrap">
+        <p id="listHeader">The greatest band of all time!</p>
+        <ul id="list">
+            <li class="codeup">Phil Anselmo</li>
+            <li class="codeup">Dimebag Darrell</li>
+            <li class="codeup">Vinnie Paul</li>
+            <li class="codeup">Rex Brown</li>
+        </ul>
+    </div>
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            alert( 'The DOM has finished loading!' );
+            // // alert( 'The DOM has finished loading!' );
+            // var theDiv = $('#wrap').text();
+            // alert(theDiv);
+            // var listHeader = $('#listHeader').text();
+            // alert(listHeader);
         });
+        //$('.codeup').css('border', 'solid red 1px');
+        $('li').css('font-size', '20px');
+        $('h1, p, li').css('background-color', 'lightblue');
+        var headerContent = $('h1').text();
+        alert(headerContent);
     </script>
 </body>
 </html>
