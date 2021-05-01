@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="test">Metallica</h1>
+<h2 id="test">Master of Puppets</h2>
+<p>End of passion play</p>
+<p>Crumbling away</p>
+<p>I'm your source of self destruction!</p>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+//Use the correct selector to hide all <p> elements.
+
+    // $('p').hide();
+
+    //Use the correct selector to hide an element with id='test'
+  $('#test').hide();
+
+  //Use the correct selector to hide all elements with class="test".
+    $('.test').hide();
+    //Use the correct selector to hide all elements in the document.
+    //$('*').hide();
+    //Use the correct selector to hide all elements with an href attribute.
+    $('[href]').hide();
+    //Use the correct selector to hide all odd table rows in a table.
+    $('tr:odd').hide();
+    //Use the correct event to hide all <p> elements with a "click".
+    /*$('p').click(function () {
+      $(this).hide();
+    });*/
+
+    //Use the correct event to hide all <p> elements with a "double-click".
+    /*$('p').dblclick(function () {
+      $(this).hide();
+    });*/
+
+    //When the mouse pointer enters a <p> element, it should be hidden. Use the correct event to do so.
+    $('p').mouseenter(function () {
+      $(this).hide();
+    });
+
+
+
+
+</script>
+
+</body>
+</html>
