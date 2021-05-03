@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konami Code</title>
+  <link rel="stylesheet" href="CSS/konami.css">
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+  "use strict";
+
+  $(document).keyup(function(event){
+    console.log(event.keyCode);
+  });
+
+ /* var konamicode = [38,38,40,40,37,39,37,39,66,65];
+  var kc=0;
+
+  function checker(){
+    if (kc===10){
+      kc=0;
+      alert("Hello World!");
+    }
+  }
+
+  function keyUp(e) {
+    var keynum;
+    if (window.event){keynum = event.keyCode;}
+    else if (e.which){keynum = e.which;}
+    for (i = 0; i < 222; i++){
+      var kx=konamicode[kc];
+      if (keynum===i){
+        if (i !== kx){kc=0;} else {kc++;}
+      }
+    }
+    checker();
+  }
+
+  document.onkeyup = keyUp;*/
+
+  var pressed = [];
+  var secretCode = 'shogun'
+
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    if (pressed.join('').includes(secretCode)) {
+      $('body').css({
+        'background-image': 'url(img/palp2.jpeg)',
+        'background-size': 'cover',
+        'background-repeat': 'no-repeat',
+        'background-color': '#010a18'});
+      $('h1').html('WELCOME TO THE DARK SIDE').css({
+        'color': 'white',
+        'display': 'flex',
+        'align-items': 'center'});
+    }
+    console.log(pressed);
+  });
+
+
+
+</script>
+</body>
+</html>
