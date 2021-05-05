@@ -5,3 +5,27 @@
 .highlight {
     background-color: yellow;
 }
+
+.pic1 {
+    border: solid 10px black;
+    background-image: url("../img/LukeSkywalker.png");
+    padding: 100px;
+    margin: 10px;
+    background-size: 100%;
+}
+
+.pic2 {
+    border: solid 10px black;
+    background-image: url("../img/LukeSkywalker.png");
+    padding: 100px;
+    margin: 10px;
+    background-size: 100%;
+}
+
+.pic3 {
+    border: solid 10px black;
+    background-image: url("../img/LukeSkywalker.png");
+    padding: 100px;
+    margin: 10px;
+    background-size: 100%;
+}
