@@ -6,26 +6,25 @@
     background-color: yellow;
 }
 
-.pic1 {
-    border: solid 10px black;
-    background-image: url("../img/LukeSkywalker.png");
-    padding: 100px;
-    margin: 10px;
-    background-size: 100%;
+#container {
+    width: 826px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
 }
 
-.pic2 {
-    border: solid 10px black;
-    background-image: url("../img/LukeSkywalker.png");
-    padding: 100px;
-    margin: 10px;
-    background-size: 100%;
+.picture {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.pic3 {
-    border: solid 10px black;
-    background-image: url("../img/LukeSkywalker.png");
-    padding: 100px;
-    margin: 10px;
-    background-size: 100%;
+.picture img {
+    border: 10px solid saddlebrown;
+}
+
+button {
+    align-self: center;
+
 }
