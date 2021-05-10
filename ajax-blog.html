@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Blog</title>
+</head>
+<body>
+  <div id="posts"></div>
+  <button id="updateBlog">Update Blog</button>
+
+
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+      function updateBlog () {
+          $('#posts').html('');
+          $.ajax('data/blog.json').done(function (blog) {
+              console.log(blog);
+              for (var i = 0; i < blog.length; i++) {
+                  var htmlStr = "<div " + (i + 1) + ">";
+                  htmlStr += "<h3>" + blog[i].title + "</h3>";
+                  htmlStr += "<p>" + blog[i].content + "</p>";
+                  htmlStr += "<p>" + blog[i].categories + "</p>";
+                  htmlStr += "<p>" + blog[i].date + "</p>";
+                  htmlStr += "</div>"
+                  $('#posts').append(htmlStr);
+              }
+          });
+      }
+
+      updateBlog();
+      $('#updateBlog').click(updateBlog);
+
+
+  </script>
+
+
+</body>
+</html>
+
+
+
