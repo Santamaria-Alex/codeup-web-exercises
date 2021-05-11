@@ -2,9 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mapbox</title>
+    <title>Geocode Examples</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 600px;
+            height: 500px;
+        }
+    </style>
 </head>
 <body>
 
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<!-- Custom JS -->
+<script>
+
+    var accessToken = MAPBOX_ACCESS_TOKEN
+
+    mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 9,
+        center: [-98.4916, 29.4252]
+    });
+
+    var restaurants = [
+        {
+            name: "Little Ceaser's",
+            lngLat: [ -98.62938827375699, 29.417520586634424],
+            color: 'orange'
+        },
+        {
+            name: "Bob's Steak & Chop House",
+            lngLat: [-98.59972295419462, 29.604731601763234],
+            color: 'green'
+        },
+    ];
+
+    function display (restaurants) {
+        marker = new mapboxgl.Marker ({
+            color: restaurants.color,
+            draggable: false
+        })
+
+        .setLngLat (restaurants.lngLat)
+        .addTo(map);
+
+        var popup = new mapboxgl.Popup()
+
+        .setLngLat(restaurants.lngLat)
+
+        .setHTML ("<h4>" + restaurants.name + "</h4>");
+
+        marker.setPopup(popup);
+    }
+
+    restaurants.forEach(display);
+
+    // the  geocode method from mapbox-geocoder-utils.js
+    /*geocode("7470 MILITARY DR W, San Antonio, TX 78227", MAPBOX_ACCESS_TOKEN).then(function(result) {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(18);
+    });*/
+
+    // Set options
+    /*var marker = new mapboxgl.Marker({
+        color: "red",
+        draggable: true
+    }).setLngLat([ -98.62938827375699, 29.417520586634424])
+        .addTo(map);*/
+
+</script>
 </body>
 </html>
