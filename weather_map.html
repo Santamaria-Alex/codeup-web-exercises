@@ -2,20 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Weather App</title>
 </head>
 <body>
+<header>
+    <h3>Weather App</h3>
+</header>
+
+<main>
+    <div id="forecast">
+
+    </div>
+</main>
+
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
 <script>
-  var coordinates = [29.4241, -98.4936];
-  $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
-          .done(function (resp) {
-            console.log(resp);
-            var today = resp.daily[0];
-            var todayDate = new Date(today.dt * 1000);
-            console.log(todayDate);
-          });
+
+        var coordinates = [29.4241, -98.4936];
+        $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
+            .done(function (resp) {
+                //console.log(resp);
+                var today = resp.daily[0];
+                var todayDate = new Date(today.dt * 1000);
+                //console.log(todayDate);
+
+
+        var html = "";
+        for (var i = 0; i < 5; i++) {
+            var dailyForecast = resp.daily[i]
+            var description = dailyForecast.weather[0].main
+            var date = new Date(dailyForecast.dt * 1000);
+            var Day = date.toLocaleString('en-us', {weekday: 'long'});
+            var Month = date.toLocaleString('en-us', {month: 'long'});
+            var numberDate = date.toLocaleString('en-us', {day: 'numeric'});
+            html += "<div "
+            html += '<h3>' + Day + ' ' + Month + ' ' + numberDate + '</h3>'
+            html += '<p>' + dailyForecast.temp.min + '&#8457 / ' + dailyForecast.temp.max + '&#8457' + '</p>'
+            html += "</div>"
+        }
+        $('#forecast').html(html);
+            });
+
+
 </script>
 
 
