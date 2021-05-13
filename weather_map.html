@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
 <header>
-    <h3>Weather App</h3>
+    <h3 class="m-3">Weather App</h3>
 </header>
 
 <main>
-    <div id="forecast">
+    <div id="forecast" class="d-flex col container-fluid">
 
     </div>
 </main>
 
+<div class="container-fluid">
+    <div class="" id='map' style='width: 100%; height: 200px;'></div>
+</div>
+
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
 <script>
 
         var coordinates = [29.4241, -98.4936];
         $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
             .done(function (resp) {
-                //console.log(resp);
+                console.log(resp);
                 var today = resp.daily[0];
                 var todayDate = new Date(today.dt * 1000);
                 //console.log(todayDate);
@@ -36,13 +46,30 @@
             var Day = date.toLocaleString('en-us', {weekday: 'long'});
             var Month = date.toLocaleString('en-us', {month: 'long'});
             var numberDate = date.toLocaleString('en-us', {day: 'numeric'});
-            html += "<div "
-            html += '<h3>' + Day + ' ' + Month + ' ' + numberDate + '</h3>'
+            var year = date.toLocaleString('en-us', {year: 'numeric'});
+            var humidity = dailyForecast.humidity;
+            var wind = dailyForecast.wind_speed;
+            html += "<div class= 'card m-1' "
+            html += '<p>' + Day + ' ' + Month + ' ' + numberDate + ', ' + year + '</p>'
             html += '<p>' + dailyForecast.temp.min + '&#8457 / ' + dailyForecast.temp.max + '&#8457' + '</p>'
+            html += '<p>' + 'Description: ' + '<strong>' + description + '</strong>' + '</p>'
+            html += '<p>' + 'Humidity: ' + '<strong>' + humidity + ' </strong>' + '</p>'
+            html += '<p>' + 'Wind: ' + '<strong>' + wind + '</strong>' + '</p>'
             html += "</div>"
         }
         $('#forecast').html(html);
             });
+
+
+        var accessToken = MAPBOX_ACCESS_TOKEN
+
+        mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 9,
+            center: [-98.4916, 29.4252]
+        });
 
 
 </script>
@@ -59,6 +86,9 @@ var humanDate = date.toLocaleString('en-us', {day: 'numeric'});
 console.log(humanDate)
 var humanYear = date.toLocaleString("en-US", {year: "numeric"})
 console.log(humanYear)-->
+
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>-->
+
 
 </body>
 </html>
