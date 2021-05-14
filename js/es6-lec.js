@@ -217,6 +217,47 @@ let {movieName, length} = myObject;
 console.log(movieName, length);
 
 
+// LOOP THROUGH MOVIES //
+let movies = [
+    {
+        title: 'The Lord of the Rings: The Fellowship of the Ring',
+        description: 'A group of travelers venture to a volcano to destroy a powerful object.'
+    },
+    {
+        title: 'The Bee Movie',
+        description: 'A movie about bees'
+    },
+    {
+        title: 'Harry Potter',
+        description: 'A young kid is a wizard'
+    }
+]
+
+function getMovieInfo(listOfMovies){
+    for (let movie of listOfMovies) {
+        let {title, description} = movie;
+        console.log(`The movie you selected is ${title}. A short description would be: ${description}`);
+    }
+}
+
+getMovieInfo(movies);
+
+
+
+// ===== ARRAY DESTRUCTURING ===== //
+
+// OLD WAY //
+var lotr = movies[0];
+var beeMovie = movies[1];
+var hP = movies [2];
+
+console.log(lotr, beeMovie, hP);
+
+// NEW ES6 WAY //
+let [x, y, z] = movies;
+
+console.log(x, y, z);
+
 
 
 
