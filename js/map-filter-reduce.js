@@ -2,7 +2,7 @@
 
 // .forEach()
 let output = '';
-// let prices = [32.99, 21.99, 6.99, 12.99, 8.98, 5.99];
+let prices = [32.99, 21.99, 6.99, 12.99, 8.98, 5.99];
 // let pricesAfterTax = [];
 //
 // prices.forEach(function (item, index){
@@ -90,10 +90,10 @@ const under3k = cars.filter(function (car){
     return car.mileage < 3000;
 })
 
-under3k.forEach(function (car){
-    output = output + '<p>' + under3k + '</p>'
-    $('#output').html(output);
-})
+// under3k.forEach(function (car){
+//     output = output + '<p>' + under3k + '</p>'
+//     $('#output').html(output);
+// })
 
 
 
@@ -162,11 +162,95 @@ let es6emails = users.map(user => user.email);
 let trilinguals = users.filter(function (user) {
     return user.languages.length >= 3;
 });
+console.log(trilinguals)
 
 
+//////////// REDUCE //////////////
+
+var affordableWithTax = prices.filter(function (price){
+    return price <10;
+}).map(function (price){
+    let tax = (price * 0.0825).toFixed(2);
+    let total = (parseFloat(price) + parseFloat(tax).toFixed(2));
+    return parseFloat(total);
+});
+
+affordableWithTax.forEach(function (itemPrice){
+    output = output + '<p>' + itemPrice + '</p>';
+    $('#output').html(output);
+});
 
 
+let totalCost = affordableWithTax.reduce(function (total, itemPrice, index){
+    console.log(`The index is: ${index}, the total is: ${total}, the itemPrice is: ${itemPrice}`);
+    return total + itemPrice;
+});
+console.log(totalCost);
 
+
+let averagePrice = affordableWithTax.reduce(function (total, itemPrice, index, array){
+    total = total + itemPrice;
+    if (index === array.length - 1) {
+        return total/array.length;
+    } else {
+        return total;
+    }
+});
+console.log(averagePrice.toFixed(2));
+
+
+////////////// EXERCISE 4 ////////////////////
+// Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average. //
+
+///// ES5 /////
+let totalYearsOfExperience = users.reduce(function (total, user){
+    let yearsOfExperience = user.yearsOfExperience;
+    return total + yearsOfExperience;
+}, 0)
+console.log(totalYearsOfExperience);
+
+//// ES6 ////
+totalYearsOfExperience = users.reduce((total, user) => total + user.yearsOfExperience, 0);
+
+console.log(totalYearsOfExperience)
+
+///////////// EXERCISE 5 //////////////
+// Use .reduce to get the longest email from the list of users. //
+let longestEmail = users.reduce(function (accumulator, user, index, usersArray) {
+    if (index === usersArray.length - 1) {
+        accumulator.push(user.email);
+        accumulator.sort(function (email1, email2) {
+            return email2.length - email1.length;
+        });
+        return accumulator[0];
+    } else {
+        accumulator.push(user.email);
+        return accumulator;
+    }
+}, []);
+
+console.log(longestEmail);
+
+///////////// EXERCISE 6 ////////////
+// Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin. //
+let names = users.reduce(function (accumulator,  user){
+    accumulator.push(user.name);
+    return accumulator;
+}, []);
+
+let namesJoined = users.reduce(function (accumulator, user, index, usersArray){
+    if (index === usersArray.length - 1){
+        accumulator.push(user.name);
+        let niceJoin = accumulator.join(', ');
+        niceJoin = 'Your instructors are: ' + niceJoin + '.';
+        return niceJoin;
+    } else {
+        accumulator.push(user.name);
+        return accumulator;
+    }
+}, []);
+
+console.log(namesJoined);
 
 
 
