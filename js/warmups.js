@@ -13,37 +13,49 @@
 
 
 ////// My answer -- was correct /////
-function fizzBuzz (){
-    for (var i = 1; i <= 30; i++){
-        if (i % 3 === 0 && i % 5 === 0){
-            console.log("FizzBuzz")
-        } else if (i % 5 === 0){
-            console.log("Buzz");
-        } else if (i % 3 === 0){
-            console.log("Fizz");
-        } else {
-            console.log(i);
-        }
-    }
-}
+// function fizzBuzz (){
+//     for (var i = 1; i <= 30; i++){
+//         if (i % 3 === 0 && i % 5 === 0){
+//             console.log("FizzBuzz")
+//         } else if (i % 5 === 0){
+//             console.log("Buzz");
+//         } else if (i % 3 === 0){
+//             console.log("Fizz");
+//         } else {
+//             console.log(i);
+//         }
+//     }
+// }
 
 // fizzBuzz();
 
 
 ///// Professor answer /////
-(() => {
-    const fizzBuzz = numTil => {
-        for (let x =1; x <= numTil; x++){
-            if (x % 3 === 0 && x % 5 === 0){
-                console.log("FizzBuzz");
-            } else if (x % 3 === 0){
-                console.log("Fizz");
-            } else if (x % 5 === 0){
-                console.log("Buzz")
-            } else {
-                console.log(x);
-            }
-        }
-    }
-    fizzBuzz(30);
-})();
+// (() => {
+//     const fizzBuzz = numTil => {
+//         for (let x =1; x <= numTil; x++){
+//             if (x % 3 === 0 && x % 5 === 0){
+//                 console.log("FizzBuzz");
+//             } else if (x % 3 === 0){
+//                 console.log("Fizz");
+//             } else if (x % 5 === 0){
+//                 console.log("Buzz")
+//             } else {
+//                 console.log(x);
+//             }
+//         }
+//     }
+//     fizzBuzz(30);
+// })();
+
+
+//// Write a function in Javascript that returns the number 7. ////
+    // ES5 //
+// function returnSeven (){
+//     return 7;
+// }
+
+    // ES6 //
+const returnSeven = () => 7;
+
+console.log(returnSeven());
