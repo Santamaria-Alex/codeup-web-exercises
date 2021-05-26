@@ -56,6 +56,44 @@
 // }
 
     // ES6 //
-const returnSeven = () => 7;
+// const returnSeven = () => 7;
+//
+// console.log(returnSeven());
 
-console.log(returnSeven());
+
+
+/////// Write a function in JavaScript that takes in a number and returns the number passed multiplied by the number 5. If we pass anything other
+function isNum (input){
+    if (isNaN(input)){
+        return 0;
+    } else {
+        return (input * 5);
+    }
+}
+
+const multiplyByFive = num => typeof num === "number" ? num * 5 : 0;
+
+console.log(multiplyByFive(5))
+console.log(multiplyByFive(-3.5))
+console.log(multiplyByFive(5))
+console.log(multiplyByFive(5))
+console.log(multiplyByFive(5))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
